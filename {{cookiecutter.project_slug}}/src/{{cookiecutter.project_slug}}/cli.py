@@ -21,7 +21,7 @@ if dotenv_path:
 @click.command()
 @click.option(
     '--arg',
-    default='value'
+    default='value',
     help='some argument for this command',)
 def cli(arg):
     click.echo('arg is {}'.format(arg))
