@@ -35,16 +35,18 @@ pip-delete-this-directory.txt
 # Django stuff:
 *.log
 local_settings.py
+settings/local.py
 logs
 
 # dotenv
 .env
 
 # db
-db.sqlite3
-
-# local django settings
-catch/settings/local.py
+*sqlite3.db
 
 # static root
 public/
+
+# virtualenv
+venv
+
