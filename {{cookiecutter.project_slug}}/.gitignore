@@ -46,7 +46,17 @@ logs
 
 # static root
 public/
+http_static/
 
 # virtualenv
+env
+pyenv
 venv
+.venv
 
+# other
+*.DS_Store
+secure.py
+production.py
+*-old.json
+*.srt

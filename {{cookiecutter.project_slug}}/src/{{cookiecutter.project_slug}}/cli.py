@@ -2,17 +2,14 @@
 
 """Console script for hxann."""
 import contextlib
-import sys
-import click
-
-from dotenv import load_dotenv
 import os
+import sys
 
+import click
+from dotenv import load_dotenv
 
 # if dotenv file, load it
-dotenv_path = os.environ.get(
-        '{{cookiecutter.project_prefix}}_DOTENV_PATH',
-        None)
+dotenv_path = os.environ.get("{{cookiecutter.project_prefix}}_DOTENV_PATH", None)
 if dotenv_path:
     # BEWARE that dotenv overrides what's already in env
     load_dotenv(dotenv_path, override=True)
@@ -20,18 +17,19 @@ if dotenv_path:
 
 @click.command()
 @click.option(
-    '--arg',
-    default='value',
-    help='some argument for this command',)
+    "--arg",
+    default="value",
+    help="some argument for this command",
+)
 def cli(arg):
-    click.echo('arg is {}'.format(arg))
+    click.echo("arg is {}".format(arg))
 
 
 # from http://stackoverflow.com/a/29824059
 @contextlib.contextmanager
-def _smart_open(filename, mode='Ur'):
-    if filename == '-':
-        if mode is None or mode == '' or 'r' in mode:
+def _smart_open(filename, mode="Ur"):
+    if filename == "-":
+        if mode is None or mode == "" or "r" in mode:
             fhandle = sys.stdin
         else:
             fhandle = sys.stdout
@@ -41,7 +39,7 @@ def _smart_open(filename, mode='Ur'):
     try:
         yield fhandle
     finally:
-        if filename != '-':
+        if filename != "-":
             fhandle.close()
 
 
