@@ -1,9 +1,61 @@
 
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "{{cookiecutter.project_slug}}"
+dynamic = ["version"]
+description = "{{cookiecutter.description}}"
+license = {file = "LICENSE"}
+authors = [
+    {name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"}
+]
+readme = "README.md"
+keywords = [
+    "vpal",
+    "{{cookiecutter.project_slug}}",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "click",
+]
+requires-python = ">=3.12"
+
+[project.scripts]
+{{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}:cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/harvardx/{{cookiecutter.project_slug}}"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+lint = [
+    "black",
+    "isort",
+    "ruff",
+]
+
+
+[tool.setuptools.dynamic]
+version = {attr = "{{cookiecutter.project_slug}}.__version__"}
+
+
 [tool.isort]
-profile = 'black'
+profile = "black"
+
 
 [tool.black]
-target-version = ['py36']
+target-version = ["py312"]
 exclude = '''
 /(
         \.eggs
@@ -14,3 +66,16 @@ exclude = '''
       | dist
 )/
 '''
+
+
+[tool.pytest.ini_options]
+addopts = [
+    "-vvv",
+    "--import-mode=importlib",
+]
+testpaths = [
+    "tests",
+]
+pythonpath = [
+    "tests",
+]

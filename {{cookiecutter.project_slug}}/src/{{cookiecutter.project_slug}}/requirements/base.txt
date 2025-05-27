@@ -1,6 +1,0 @@
-black
-click
-flake8
-isort
-python-dotenv
-

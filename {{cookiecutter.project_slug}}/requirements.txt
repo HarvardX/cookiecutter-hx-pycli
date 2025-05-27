@@ -1,1 +1,0 @@
--r src/{{cookiecutter.project_slug}}/requirements/base.txt

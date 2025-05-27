@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Console script for hxann."""
+"""Console script for {{cookiecutter.project_slug}}."""
 import contextlib
 import os
 import sys
