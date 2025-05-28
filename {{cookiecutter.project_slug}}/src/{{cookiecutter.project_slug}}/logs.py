@@ -1,5 +1,4 @@
 import logging
-import os
 
 # Prep the logger
 VERBOSE_LOGFORMAT = "%(asctime)s\t%(levelname)s\t%(name)s:%(lineno)d\t%(message)s"

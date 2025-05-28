@@ -9,7 +9,7 @@ cookiecutter template for python cli packages
     $> pip install -U cookiecutter
 
     # generate package template
-    $> cookiecutter https://github.com/nmaekawa/cookiecutter-hx-pycli
+    $> cookiecutter https://github.com/harvardx/cookiecutter-hx-pycli
 
 
 
